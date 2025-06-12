@@ -111,7 +111,7 @@ var Fi = { exports: {} };
   }, c.prototype.off = c.prototype.removeListener, c.prototype.addListener = c.prototype.on, c.prefixed = i, c.EventEmitter = c, s.exports = c;
 })(Fi);
 var Rn = Fi.exports;
-class xh extends Rn.EventEmitter {
+class Sh extends Rn.EventEmitter {
   constructor() {
     super(), k(this, "timeOrigin"), k(this, "elapsedTime"), k(this, "state"), k(this, "_rafId"), this.timeOrigin = performance.now(), this.elapsedTime = 0, this._rafId = 0, this.state = "idle";
   }
@@ -9214,7 +9214,7 @@ const Ih = (s) => {
     };
   }
 }, Rh = dh();
-class Mh extends kn {
+class Lh extends kn {
   constructor(i) {
     super(Rh);
     Vs(this, "rootElement");
@@ -9276,7 +9276,7 @@ class Mh extends kn {
           case bt.MOTION_PATH: {
             const a = n;
             if (c) {
-              const _ = { x: a.pos[0], y: a.pos[1] }, u = Lh(c.style.transform, _);
+              const _ = { x: a.pos[0], y: a.pos[1] }, u = mh(c.style.transform, _);
               c.style.transform = u;
             }
             break;
@@ -9294,10 +9294,10 @@ class Mh extends kn {
     }
   }
 }
-const Lh = (s, e) => {
-  const { scale: i, rotate: n, skew: r, pivot: h } = mh(s);
+const mh = (s, e) => {
+  const { scale: i, rotate: n, skew: r, pivot: h } = Ch(s);
   return `translate(${e.x}px, ${e.y}px) rotate(${n}deg) skew(${r.x}deg, ${r.y}deg) scale(${i.x}, ${i.y}) translate(${-h.x}px, ${-h.y}px)`;
-}, mh = (s) => {
+}, Ch = (s) => {
   const e = s.split(") ");
   function i(a) {
     const _ = a.replace(/[^0-9.]/g, "").replace(/(\..*)\./g, "$1");
@@ -9312,6 +9312,4 @@ const Lh = (s, e) => {
     pivot: { x: c[0], y: c[1] }
   };
 };
-export {
-  Mh as AnimationComposer
-};
+window.AnimationComposer = Lh;
