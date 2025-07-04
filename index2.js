@@ -9192,6 +9192,3 @@ class fh extends Hn {
   }
 }
 window.AnimationComposer = fh;
-export {
-  fh as HTMLAnimationComposer
-};
